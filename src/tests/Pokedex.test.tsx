@@ -80,4 +80,10 @@ describe('Teste o componente Pokedex', () => {
     await user.click(tudo);
     expect(screen.getByText(/pikachu/i)).toBeInTheDocument();
   });
+
+  test('Teste os filtros dos botões pelo id', () => {
+    renderWithRouter(<App />);
+    const botoesId = screen.getAllByTestId('pokemon-type-button');
+    expect(botoesId).toHaveLength(7);
+  });
 });
